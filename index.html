@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>🎉🎉🎁</title>
-</head>
-<body>
-    <div>
-        <h1>Test</h1>
-        <a href="test.html">Go to site</a>
+  </head>
+
+  <style>
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff; 
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3; 
+    }
+  </style>
+  <body>
+    <div
+      style="
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+        width: 1200px;
+      "
+    >
+      <div style="width: 40%" id="container">
+        <h1>Happy birthdayyyyyyyy !!!!</h1>
+        <p>Wishing you the bestest day ever :333333</p>
+        <p>Site zelbi realnost i se najdobro <3</p>
+        <hr />
+        <b>Are you the prettiest girl?</b>
+        <div style="display: flex; justify-content: space-between">
+          <a href="vtora.html" class="button" id="click">Yes</a>
+          <a href="NO" id="link" class="button">Nope</a>
+        </div>
+      </div>
+      <div style="width: 55%">
+        <p>.</p>
+        <img src="spiderman_backdrop_grande.webp" />
+      </div>
     </div>
-</body>
+
+    <script>
+        var clicks = 0;
+      document.getElementById("link").addEventListener("click", function (e) {
+        event.preventDefault();
+
+        var container = document.getElementById("container");
+        var newX = Math.floor(
+          Math.random() * (container.offsetWidth - this.offsetWidth)
+        );
+        var newY = Math.floor(
+          Math.random() * (container.offsetHeight - this.offsetHeight)
+        );
+
+        this.style.position = "absolute";
+        this.style.left = newX + "px";
+        this.style.top = newY + "px";
+        clicks++;
+
+        if(clicks >= 5) {
+            this.remove();
+            var el = document.getElementById("click");
+            el.innerHTML = "YES CLICK ME"
+        }
+      });
+
+    
+    </script>
+  </body>
 </html>
